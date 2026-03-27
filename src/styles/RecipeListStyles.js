@@ -42,17 +42,23 @@ const styles=StyleSheet.create({
     timeWrapper:{
         flexDirection:'row',
         alignItems: 'center',
-        marginBottom:5,
+        marginTop:5,
     },
     timeText:{
-        fontFamily: 'Poppins-Regular',
+        fontFamily: 'Poppins-Bold',
         fontSize:12,
         color: '#4ECDC4',
-        marginBottom: 4,
+        marginLeft: 5
     },
     recipeName: {
         fontFamily: 'Poppins-Bold',
         fontSize: 14,
+        color: '#2C3E50', // Text: Charcoal Black
+        fontWeight: 'bold',
+    },
+    recipeCategory: {
+        fontFamily: 'Poppins-Regular',
+        fontSize: 12,
         color: '#2C3E50', // Text: Charcoal Black
         fontWeight: 'bold',
     },

@@ -33,7 +33,7 @@ export const RECIPES = [
         {
             id: '2',
             name: 'Arroz con Leche',
-            category:'Postrte',
+            category:'Postre',
             difficulty:'Dificultad media',
             image: ricePuddingImg,
             prepTime: '35 min',

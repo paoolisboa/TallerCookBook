@@ -45,7 +45,7 @@ function App() {
           // Focus
           tabBarIcon: ({focused, color, size}) => {
               let iconName;
-              if(route.name === "RecetasTab"){
+              if(route.name === "Recetas"){
                 iconName = focused ? 'silverware-fork-knife' : 'silverware-fork-knife'
               } else if (route.name === 'NuevaReceta'){
                 iconName = focused ? 'plus-box' : 'plus-box-outline'
@@ -58,6 +58,7 @@ function App() {
           tabBarInactiveTinColor : 'gray',
           headerShown: false,
           headerTitleStyle: { fontFamily: 'Poppins-Bold' },
+          headerTintColor:'#E67E22',
         })}
       >
         <Tab.Screen

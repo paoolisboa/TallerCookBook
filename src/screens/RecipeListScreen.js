@@ -42,6 +42,7 @@ const RecipeListScreen = ({navigation, route}) => {
                         <Icon name='clock-outline' size={14} color='#4ECDC4'/>
                         <Text style={styles.timeText}>{item.prepTime}</Text>
                     </View>
+                    <Text style = {styles.recipeCategory}>{item.category}</Text>
                     <Text style = {styles.recipeName}>{item.name}</Text>
                 </View>
             </TouchableOpacity>
