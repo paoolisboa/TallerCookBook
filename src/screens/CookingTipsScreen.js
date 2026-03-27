@@ -2,6 +2,7 @@ import React from 'react'
 import {Text, TextInput, View, TouchableOpacity} from 'react-native'
 
 
+
 const CookingTipsScreen = () => {
 
  return(
