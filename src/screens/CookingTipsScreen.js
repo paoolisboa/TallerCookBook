@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Text, StyleSheet, View, TouchableOpacity } from 'react-native'
+import { Text, StyleSheet, View, TouchableOpacity, Image } from 'react-native'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import COOKING_TIPS from "./../data/cookingTipsData"
 
@@ -13,6 +13,7 @@ const CookingTipsScreen = () => {
         const intervalId = setInterval(() => {
             setCurrentIndex((prev) => (prev + 1) % tips.length);
         }, 5000);
+
         // Cleanup: clear interval when component unmounts 
         return () => clearInterval(intervalId);
     });
@@ -25,6 +26,10 @@ const CookingTipsScreen = () => {
         <SafeAreaProvider>
             <SafeAreaView>
                 <View>
+                    <Image
+                        style={styles.tipImage}
+                        source={tips[currentIndex].image}
+                     />
                     <Text>
                         {tips[currentIndex].title}
                     </Text>
@@ -71,6 +76,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#DDDDDD',
         padding: 10,
     },
+    tipImage: {
+        width: 150,
+        height: 150,
+        alignSelf: 'center'
+      },
 });
 
 export default CookingTipsScreen
