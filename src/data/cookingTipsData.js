@@ -18,7 +18,7 @@ export const COOKING_TIPS = [
   },
   {
     image: carneImg,
-    title: "Carne a temperatura ambiente",
+    title: "Descongela la carne",
     description:
       "Saca la carne de la nevera 20–30 minutos antes de cocinarla. Cocina más pareja, el centro no queda frío y la costra exterior se forma mejor sin quemar.",
   },

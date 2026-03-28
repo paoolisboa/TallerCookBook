@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Text, StyleSheet, View, TouchableOpacity, Image } from 'react-native'
+import { Text, View, TouchableOpacity, Image } from 'react-native'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import COOKING_TIPS from "./../data/cookingTipsData"
+import styles from '../styles/CookingTipsStyles'
 
 const CookingTipsScreen = () => {
 
@@ -24,33 +25,39 @@ const CookingTipsScreen = () => {
 
     return (
         <SafeAreaProvider>
-            <SafeAreaView>
-                <View>
-                    <Image
-                        style={styles.tipImage}
-                        source={tips[currentIndex].image}
-                     />
-                    <Text>
-                        {tips[currentIndex].title}
-                    </Text>
-                    <Text>
-                        {tips[currentIndex].description}
-                    </Text>
-                    <Text>
-                        {infoIndex}
-                    </Text>
+            <SafeAreaView style={styles.safeArea}>
+                <View style={styles.screenInner}>
+                    <View style={styles.tipCard}>
+                        <View style={styles.cardBody}>
+                            <View style={styles.tipImageFrame}>
+                                <Image
+                                    style={styles.tipImage}
+                                    source={tips[currentIndex].image}
+                                />
+                            </View>
+                            <Text style={styles.tipTitle}>
+                                {tips[currentIndex].title}
+                            </Text>
+                            <Text style={styles.tipDescription}>
+                                {tips[currentIndex].description}
+                            </Text>
+                            <Text style={styles.tipCounter}>
+                                {infoIndex}
+                            </Text>
+                        </View>
+                    </View>
                     <View style={styles.actions}>
                         <TouchableOpacity
-                            style={styles.button}
+                            style={[styles.button, styles.buttonPrev]}
                             onPress={() => { setCurrentIndex(currentIndex - 1 === -1 ? 9 : currentIndex - 1) }}
                         >
-                            <Text>Prev</Text>
+                            <Text style={styles.buttonLabel}>Anterior</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
-                            style={styles.button}
+                            style={[styles.button, styles.buttonNext]}
                             onPress={() => { setCurrentIndex((prev) => (prev + 1) % tips.length) }}
                         >
-                            <Text>Next</Text>
+                            <Text style={styles.buttonLabel}>Siguiente</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -58,29 +65,5 @@ const CookingTipsScreen = () => {
         </SafeAreaProvider>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    actions: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'space-evenly',
-        width: '100%',   // ocupa todo el ancho
-        padding: 3,      // simula gap interno
-    },
-    button: {
-        width: '48%',
-        alignItems: 'center',
-        backgroundColor: '#DDDDDD',
-        padding: 10,
-    },
-    tipImage: {
-        width: 150,
-        height: 150,
-        alignSelf: 'center'
-      },
-});
 
 export default CookingTipsScreen
