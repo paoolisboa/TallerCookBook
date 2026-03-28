@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 import React from 'react'
 import { StatusBar, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -23,11 +24,6 @@ const RecipesStack=()=>{
         name="Details"
         component={RecipeDetailScreen}
         options={{title: 'Detalle de Receta'}}
-      />
-      <Stack.Screen
-        name="Tips"
-        component={CookingTipsScreen}
-        options={{title: 'Tips Culinarios'}}
       />
     </Stack.Navigator>
   )
@@ -55,10 +51,10 @@ function App() {
               return <Icon name = {iconName} size = {size} color = {color}/>
           },
           tabBarActiveTinColor : '#E67E22',
-          tabBarInactiveTinColor : 'gray',
           headerShown: false,
           headerTitleStyle: { fontFamily: 'Poppins-Bold' },
           headerTintColor:'#E67E22',
+          tabBarInactiveTinColor : '#1d1d1d',
         })}
       >
         <Tab.Screen
