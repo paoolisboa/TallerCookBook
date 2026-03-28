@@ -136,3 +136,5 @@ export const RECIPES = [
             ]
         }
 ]
+
+export default RECIPES

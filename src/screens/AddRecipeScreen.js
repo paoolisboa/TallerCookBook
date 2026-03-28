@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { TextInput, StyleSheet, Platform, Alert, KeyboardAvoidingView, Text, View, ScrollView, TouchableOpacity } from 'react-native'
+import { TextInput, Platform, Alert, KeyboardAvoidingView, Text, View, ScrollView, TouchableOpacity } from 'react-native'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import styles from '../styles/AddRecipeStyles'
+import styles from '../styles/addRecipeStyles'
 
 function showAlert(message) {
     if (Platform.OS === 'web') {

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import {View, Text, FlatList, TouchableOpacity, StatusBar, Image, ActivityIndicator} from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import styles from '../styles/recipeListStyles';
 import {RECIPES} from '../data/recipesInitialData'
-import styles from '../styles/RecipeListStyles';
 
 const RecipeListScreen = ({navigation, route}) => {
     //Initial states
@@ -69,11 +69,8 @@ const RecipeListScreen = ({navigation, route}) => {
                         showsVerticalScrollIndicator={true}
                     />
                 )}
-
-
             </View>
         </SafeAreaView>
-
     )//return
 }//RecipeListScreen
 

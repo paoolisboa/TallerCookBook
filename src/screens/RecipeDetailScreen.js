@@ -2,7 +2,7 @@ import React, {useState, useEffect } from 'react'
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import styles from '../styles/RecipeDetailStyles'
+import styles from '../styles/recipeDetailStyles'
 
 
 function RecipeDetailsScreen ({route}){
@@ -71,7 +71,6 @@ function RecipeDetailsScreen ({route}){
                 </View>
             </ScrollView>
         </SafeAreaView>
-
     )
 }
 

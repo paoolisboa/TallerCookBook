@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Text, View, TouchableOpacity, Image } from 'react-native'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
+import styles from '../styles/cookingTipsStyles'
 import COOKING_TIPS from "./../data/cookingTipsData"
-import styles from '../styles/CookingTipsStyles'
 
 const CookingTipsScreen = () => {
 
