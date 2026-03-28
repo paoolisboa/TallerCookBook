@@ -28,6 +28,10 @@ const styles = StyleSheet.create({
       paddingHorizontal: 16,
       borderRadius: 8,
   },
+  saveButtonDisable: {
+    backgroundColor: '#D1D5DB',
+    opacity: 0.7,
+  },
   cleanButton: {
       alignItems: 'center',
       justifyContent: 'center',
@@ -54,7 +58,7 @@ const styles = StyleSheet.create({
       fontSize: 24,
       color: '#2C3E50',
       marginLeft: 12
-  }
+  },
 });
 
 export default styles
