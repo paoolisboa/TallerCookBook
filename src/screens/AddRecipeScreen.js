@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TextInput, Platform, Alert, KeyboardAvoidingView, Text, View, ScrollView, TouchableOpacity } from 'react-native'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import styles from '../styles/addRecipeStyles'
@@ -26,6 +26,7 @@ const AddRecipeScreen = () => {
     const [preparationTime, setPreparationTime] = useState('');
     const [difficulty, setDifficulty] = useState('');
     const [ingredients, setIngredients] = useState('');
+    const [canSaveButton, setCanSaveButton] = useState(false);
 
     const handleSave = () => {
         if (
@@ -39,7 +40,19 @@ const AddRecipeScreen = () => {
             return;
         }
         showAlert('Se ha guardado la receta exitosamente');
+        handleClean();
     };
+
+    useEffect(() => {
+        const allow =
+            isFieldEmpty(recipeName) ||
+            isFieldEmpty(category) ||
+            isFieldEmpty(preparationTime) ||
+            isFieldEmpty(difficulty) ||
+            isFieldEmpty(ingredients)
+        
+            setCanSaveButton(allow);
+    }, [recipeName, category, preparationTime, difficulty, ingredients]);
 
     const handleClean = () => {
         setRecipeName('');
@@ -107,7 +120,12 @@ const AddRecipeScreen = () => {
                         <View style={styles.actions}>
                             <TouchableOpacity
                                 onPress={handleSave}
-                                style={styles.saveButton}
+                                disabled={canSaveButton}
+                                style={[
+                                    styles.saveButton,
+                                    /* canSaveButton ?? only verify null or undefined */
+                                    canSaveButton && styles.saveButtonDisable 
+                                ]}
                             >
                                 <Text style={styles.buttonText}>Guardar receta</Text>
                             </TouchableOpacity>
@@ -124,7 +142,5 @@ const AddRecipeScreen = () => {
         </SafeAreaProvider>
     );
 }
-
-
 
 export default AddRecipeScreen;
